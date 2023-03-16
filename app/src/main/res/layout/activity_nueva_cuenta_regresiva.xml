@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/textura_movil"
+    tools:context=".NuevaCuentaRegresivaActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/nueva_cuenta_regresiva_toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:backgroundTint="@color/naranjaRojizo"
+        app:titleTextColor="@color/white"
+        app:title="Nueva Cuenta Regresiva"
+        app:theme="@style/MyToolbarTheme"
+        app:popupTheme="@style/Theme.MaquetadoAndroid.PopupOverlay"
+        android:theme="?attr/actionBarTheme"/>
+
+    <!--com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.MaquetadoAndroid.AppBarOverlay"
+        app:layout_constraintBottom_toTopOf="@id/countdown_numbers_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/nueva_cuenta_regresiva_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.MaquetadoAndroid.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout-->
+
+
+    <LinearLayout
+        android:id="@+id/countdown_numbers_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/nueva_cuenta_regresiva_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/countdown_name_textInputLayout"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/diasTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:text="Dias:"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <NumberPicker
+                android:id="@+id/numberpicker_days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/diasTextView"
+                app:layout_constraintTop_toTopOf="parent"></NumberPicker>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tiempoTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:text="Tiempo:"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <NumberPicker
+                android:id="@+id/numberpicker_hours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tiempoTextView"
+                app:layout_constraintTop_toTopOf="parent"></NumberPicker>
+
+            <TextView
+                android:id="@+id/separatorMinutesTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:text=":"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <NumberPicker
+                android:id="@+id/numberpicker_minutes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/separatorMinutesTextView"
+                app:layout_constraintTop_toTopOf="parent"></NumberPicker>
+
+            <TextView
+                android:id="@+id/separatorSecondsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:text=":"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <NumberPicker
+                android:id="@+id/numberpicker_seconds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/separatorSecondsTextView"
+                app:layout_constraintTop_toTopOf="parent"></NumberPicker>
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/countdown_name_textInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countdown_numbers_layout"
+        app:layout_constraintBottom_toTopOf="@+id/countdown_buttons_layout"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        android:textColorHint="@color/black"
+
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:hint="Nombre"
+            android:textColor="@color/black" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/countdown_buttons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countdown_name_textInputLayout">
+
+        <Button
+            android:id="@+id/countdown_cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:backgroundTint="@color/magenta"
+            android:text="Cancelar"
+            app:layout_constraintEnd_toStartOf="@+id/countdown_create_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/countdown_create_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:backgroundTint="@color/magenta"
+            android:text="Crear"
+            app:layout_constraintStart_toEndOf="@id/countdown_cancel_button"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/textura_movil"
+    tools:context=".NuevaAlarmaActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/nueva_alarma_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:backgroundTint="@color/naranjaRojizo"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/Theme.MaquetadoAndroid.PopupOverlay"
+        app:theme="@style/MyToolbarTheme"
+        app:title="Nueva Alarma"
+        app:titleTextColor="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/alarm_values_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/alarm_name_textInputLayout"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nueva_alarma_toolbar">
+
+        <TextView
+            android:id="@+id/newAlarmTimeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="24sp"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:text="01:23 AM"
+            android:textColor="@color/black"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toTopOf="@id/repetition_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/repetition_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/newAlarmTimeTextView">
+            <!--TextView
+                android:id="@+id/repetirTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="10dp"
+                android:text="Repetir:"
+                android:textColor="@color/black"
+                android:textSize="24sp" /-->
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/repetir_semana_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:minHeight="48dp"
+                android:text="Repetir:"
+                android:textSize="30sp"
+                android:theme="@style/MySwitchTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:useMaterialThemeColors="false" />
+
+            <LinearLayout
+                android:id="@+id/semana_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/repetir_semana_switch">
+
+                <ImageView
+                    android:id="@+id/image_sunday"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:contextClickable="true"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toStartOf="@id/image_monday"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/week_day_d" />
+
+                <ImageView
+                    android:id="@+id/image_monday"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    app:layout_constraintStart_toEndOf="@id/image_sunday"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/week_day_l_full" />
+
+                <ImageView
+                    android:id="@+id/image_tuesday"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    app:layout_constraintStart_toEndOf="@id/image_monday"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/week_day_m_full" />
+
+                <ImageView
+                    android:id="@+id/image_wednesday"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    app:layout_constraintStart_toEndOf="@id/image_tuesday"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/week_day_m_full" />
+
+                <ImageView
+                    android:id="@+id/image_thursday"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    app:layout_constraintStart_toEndOf="@id/image_wednesday"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/week_day_j_full" />
+
+                <ImageView
+                    android:id="@+id/image_friday"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    app:layout_constraintStart_toEndOf="@id/image_thursday"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/week_day_v_full" />
+
+                <ImageView
+                    android:id="@+id/image_saturday"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    app:layout_constraintStart_toEndOf="@id/image_friday"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/week_day_s" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/fecha_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/repetition_layout">
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/disparar_fecha_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:minHeight="48dp"
+                android:text="Disparar en otra fecha:"
+                android:textSize="30sp"
+                android:theme="@style/MySwitchTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:useMaterialThemeColors="false" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/alarm_date_textInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black"
+                android:visibility="gone"
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fechaTextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="14dp"
+                    android:layout_marginBottom="8dp"
+                    android:hint="Fecha"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/alarm_name_textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/black"
+        app:boxStrokeColor="@color/black"
+        app:hintTextColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/alarm_buttons_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@+id/alarm_values_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:hint="Nombre"
+            android:textColor="@color/black" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/alarm_buttons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alarm_name_textInputLayout">
+
+        <Button
+            android:id="@+id/alarm_cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:backgroundTint="@color/magenta"
+            android:text="Cancelar"
+            app:layout_constraintEnd_toStartOf="@+id/alarm_create_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/alarm_create_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:backgroundTint="@color/magenta"
+            android:text="Crear"
+            app:layout_constraintStart_toEndOf="@id/alarm_cancel_button"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

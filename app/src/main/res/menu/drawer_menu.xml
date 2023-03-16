@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+    <item
+        android:id="@+id/alarmasMenuItem"
+        android:icon="@drawable/alarm_clock"
+        android:title="Alarmas" />
+    <item
+        android:id="@+id/secondtItem"
+        android:icon="@drawable/alarm_clock"
+        android:title="Cuentas Regresivas" />
+    </group>
+
+</menu>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".cuentas.ListaCuentasRegresivasFragment">
+
+<ScrollView
+    android:id="@+id/scroll_countdowns"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="1dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+    app:layout_constraintBottom_toBottomOf="parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="4dp"
+        android:paddingEnd="2dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/nueva_cuentaRegresiva_card"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:checkable="true"
+            android:clickable="true"
+            android:focusable="false"
+            app:cardBackgroundColor="@color/naranjaPrincipal"
+            app:contentPadding="10dp">
+
+            <LinearLayout
+                android:id="@+id/nueva_alarma_relativelayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:paddingStart="4dp"
+                android:paddingEnd="2dp"
+                android:visibility="visible"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/nueva_cuenta_regresiva_icon"
+                    android:layout_width="12pt"
+                    android:layout_height="12pt"
+                    android:layout_alignLeft="@+id/nueva_cuenta_regresiva_text"
+                    android:layout_alignParentEnd="true"
+                    android:importantForAccessibility="yes"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/add"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/nueva_cuenta_regresiva_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="10dp"
+                    android:height="24dp"
+                    android:paddingLeft="10sp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    tools:text="Nueva Cuenta Regresiva"
+                    tools:visibility="visible" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/alarma_sample"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:focusable="false"
+            app:cardBackgroundColor="@color/naranjaPrincipal"
+            app:contentPadding="10dp"
+            >
+
+            <RelativeLayout
+                android:id="@+id/cuentaRegresiva_sample_relativelayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="4dp"
+                android:paddingEnd="2dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/countdown_time_sample"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+
+                        android:textSize="32sp"
+                        android:textStyle="bold"
+                        android:text="99 Days 23:59:59" />
+
+                    <TextView
+                        android:id="@+id/countdown_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true"
+                        android:textSize="14sp"
+                        android:text="Primera cuenta regresiva" />
+
+                    <ImageView
+                        android:id="@+id/delete_icon_sample"
+                        android:layout_width="20dp"
+                        android:layout_height="22dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:importantForAccessibility="yes"
+                        android:scaleType="centerCrop"
+                        android:clickable="true"
+                        android:src="@drawable/delete" /><!--montar week-->
+                    <!--observer importantForAccessibility-->
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cuentas_regresivas_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:layout_editor_absoluteX="10dp"
+            tools:layout_editor_absoluteY="598dp"
+            tools:listitem="@layout/alarma_item">
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+</ScrollView>
+
+
+
+</FrameLayout>

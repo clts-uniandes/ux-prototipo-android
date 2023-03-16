@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ListaAlarmasActivity">
+
+    <activity
+        android:id="@+id/ListaAlarmasActivity"
+        android:name="com.clts.maquetadoandroid.alarmas.ListaAlarmasActivity"
+        android:label="Nueva Cuenta regresiva"
+        tools:layout="@layout/activity_lista_alarmas"/>
+    <fragment
+        android:id="@+id/listaAlarmasFragment"
+        android:name="com.clts.maquetadoandroid.alarmas.ListaAlarmasFragment"
+        android:label="fragment_lista_alarmas"
+        tools:layout="@layout/fragment_lista_alarmas" >
+        <action
+            android:id="@+id/action_listaAlarmasFragment_to_ListaAlarmasActivity"
+            app:destination="@id/ListaAlarmasActivity" />
+        <action
+            android:id="@+id/action_listaAlarmasFragment_to_listaCuentasRegresivasFragment"
+            app:destination="@id/listaCuentasRegresivasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listaCuentasRegresivasFragment"
+        android:name="com.clts.maquetadoandroid.cuentas.ListaCuentasRegresivasFragment"
+        android:label="fragment_lista_cuentas_regresivas"
+        tools:layout="@layout/fragment_lista_cuentas_regresivas" >
+        <action
+            android:id="@+id/action_listaCuentasRegresivasFragment_to_ListaAlarmasActivity"
+            app:destination="@id/ListaAlarmasActivity" />
+        <action
+            android:id="@+id/action_listaCuentasRegresivasFragment_to_listaAlarmasFragment"
+            app:destination="@id/listaAlarmasFragment" />
+    </fragment>
+
+
+</navigation>
