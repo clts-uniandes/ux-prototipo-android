@@ -9,7 +9,7 @@
         android:id="@+id/ListaAlarmasActivity"
         android:name="com.clts.maquetadoandroid.alarmas.ListaAlarmasActivity"
         android:label="Nueva Cuenta regresiva"
-        tools:layout="@layout/activity_lista_alarmas"/>
+        tools:layout="@layout/activity_mis_recordatorios"/>
     <fragment
         android:id="@+id/listaAlarmasFragment"
         android:name="com.clts.maquetadoandroid.alarmas.ListaAlarmasFragment"

@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Button
 import androidx.appcompat.widget.Toolbar
-import com.clts.maquetadoandroid.alarmas.ListaAlarmasActivity
+import com.clts.maquetadoandroid.MisRecordatoriosActivity
 
 import com.clts.maquetadoandroid.databinding.ActivityNuevaCuentaRegresivaBinding
 
